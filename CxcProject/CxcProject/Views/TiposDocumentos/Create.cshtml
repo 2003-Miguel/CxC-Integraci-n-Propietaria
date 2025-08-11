@@ -29,7 +29,7 @@
 
                 <div class="d-flex justify-content-between">
                     <a asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
-                    <button type="submit" class="btn btn-primary">💾 Guardar</button>
+                    <button type="submit" class="btn btn-primary" id="btnGuardar" disabled>💾 Guardar</button>
                 </div>
             </form>
         </div>
@@ -37,6 +37,33 @@
 </div>
 
 @section Scripts {
+        <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const form = document.querySelector("form");
+                    const btnGuardar = document.getElementById("btnGuardar");
+
+                    const initialValues = new FormData(form);
+
+                    function checkChanges() {
+                        const formData = new FormData(form);
+                        let hasChanges = false;
+
+                        for (let [key, value] of formData.entries()) {
+                            const initialValue = initialValues.get(key) ?? "";
+                            if (value.trim() !== "" && value !== initialValue) {
+                                hasChanges = true;
+                                break;
+                            }
+                        }
+
+                        btnGuardar.disabled = !hasChanges;
+                    }
+
+                    form.addEventListener("input", checkChanges);
+                    form.addEventListener("change", checkChanges);
+                });
+            </script>
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

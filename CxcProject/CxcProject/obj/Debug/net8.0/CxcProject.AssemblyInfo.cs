@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CxcProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc2f70977cdd6b38f27e5000478d8568dc0f0960")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b4705505414308a1152d598796fe099ac4cf5eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("CxcProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CxcProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
