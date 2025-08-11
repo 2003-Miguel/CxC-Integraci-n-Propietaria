@@ -1,5 +1,4 @@
-# CxcProject-ServiciosExternos
-
+# Cuentas por Cobrar
 Proyecto ASP.NET Core MVC para gestión de Cuentas Por Cobrar y consultas a servicios externos (Tasa de Cambio, Inflación, Salud Financiera, Historial Crediticio).
 
 ## Características
