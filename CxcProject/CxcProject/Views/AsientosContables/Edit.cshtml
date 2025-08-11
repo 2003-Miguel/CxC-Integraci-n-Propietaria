@@ -1,0 +1,115 @@
+﻿@model CxcProject.Models.AsientoContable
+
+@{
+    ViewData["Title"] = "Editar Asiento Contable";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-warning">✏ Editar Asiento Contable</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Edit" id="formAsientoContable">
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Descripcion" class="form-label"></label>
+                    <input asp-for="Descripcion" class="form-control" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ClienteId" class="form-label"></label>
+                    <select asp-for="ClienteId" class="form-select" asp-items="ViewBag.ClienteId"></select>
+                    <span asp-validation-for="ClienteId" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Cuenta" class="form-label"></label>
+                    <input asp-for="Cuenta" class="form-control" />
+                    <span asp-validation-for="Cuenta" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                   <label asp-for="TipoMovimiento" class="form-label"></label>
+                   <select asp-for="TipoMovimiento" class="form-select">
+                        <option value="">-- Seleccione Tipo de Movimiento --</option>
+                        <option value="Crédito">Crédito</option>
+                        <option value="Débito">Débito</option>
+                   </select>
+                   <span asp-validation-for="TipoMovimiento" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Fecha" class="form-label"></label>
+                    <input asp-for="Fecha" type="date" class="form-control" />
+                    <span asp-validation-for="Fecha" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Monto" class="form-label"></label>
+                    <input asp-for="Monto" class="form-control" />
+                    <span asp-validation-for="Monto" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input asp-for="Estado" class="form-check-input" />
+                    <label asp-for="Estado" class="form-check-label"></label>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+                    <button id="btnGuardar" type="submit" class="btn btn-warning text-white" disabled>💾 Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+        <script>
+                document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById("formAsientoContable");
+        const btnGuardar = document.getElementById("btnGuardar");
+
+        const originalValues = {};
+        form.querySelectorAll("input[name]:not([type='hidden']), select[name], textarea[name]").forEach(input => {
+            if (input.type === "checkbox" || input.type === "radio") {
+                originalValues[input.name] = input.checked;
+            } else {
+                originalValues[input.name] = input.value.trim();
+            }
+        });
+
+        function checkChanges() {
+            let hasChanges = false;
+            form.querySelectorAll("input[name]:not([type='hidden']), select[name], textarea[name]").forEach(input => {
+                let original = originalValues[input.name];
+                let current;
+
+                if (input.type === "checkbox" || input.type === "radio") {
+                    current = input.checked;
+                } else {
+                    current = input.value.trim();
+                }
+
+                if (original !== current) {
+                    hasChanges = true;
+                }
+            });
+
+            btnGuardar.disabled = !hasChanges;
+        }
+
+        form.querySelectorAll("input[name]:not([type='hidden']), select[name], textarea[name]").forEach(input => {
+            input.addEventListener("input", checkChanges);
+            input.addEventListener("change", checkChanges);
+        });
+
+        btnGuardar.disabled = true;
+    });
+        </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

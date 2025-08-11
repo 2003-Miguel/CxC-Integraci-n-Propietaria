@@ -1,0 +1,92 @@
+﻿@model CxcProject.Models.Transaccion
+@{
+    ViewData["Title"] = "Editar Transacción";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-warning">✏ Editar Transacción</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Edit">
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                   <label asp-for="TipoMovimiento" class="form-label"></label>
+                   <select asp-for="TipoMovimiento" class="form-select">
+                        <option value="">-- Seleccione Tipo de Movimiento --</option>
+                        <option value="Crédito">Crédito</option>
+                        <option value="Débito">Débito</option>
+                   </select>
+                   <span asp-validation-for="TipoMovimiento" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="TipoDocumentoId" class="form-label"></label>
+                    <select asp-for="TipoDocumentoId" class="form-control" asp-items="ViewBag.TipoDocumentoId"></select>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NumeroDocumento" class="form-label"></label>
+                    <input asp-for="NumeroDocumento" class="form-control" />
+                    <span asp-validation-for="NumeroDocumento" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Fecha" class="form-label"></label>
+                    <input asp-for="Fecha" type="date" class="form-control" />
+                    <span asp-validation-for="Fecha" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ClienteId" class="form-label"></label>
+                    <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Monto" class="form-label"></label>
+                    <input asp-for="Monto" class="form-control" />
+                    <span asp-validation-for="Monto" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+                    <button id="btnGuardar" type="submit" class="btn btn-warning text-white" disabled>💾 Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+           <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const form = document.querySelector("form");
+                const btnGuardar = document.getElementById("btnGuardar");
+
+                const originalValues = {};
+                form.querySelectorAll("input[name], select[name], textarea[name]").forEach(input => {
+                    originalValues[input.name] = input.value;
+                });
+
+                function checkChanges() {
+                    let hasChanges = false;
+                    form.querySelectorAll("input[name], select[name], textarea[name]").forEach(input => {
+                        if (originalValues[input.name] !== input.value) {
+                            hasChanges = true;
+                        }
+                    });
+                    btnGuardar.disabled = !hasChanges;
+                }
+
+                 form.querySelectorAll("input[name], select[name], textarea[name]").forEach(input => {
+                    input.addEventListener("input", checkChanges);
+                    input.addEventListener("change", checkChanges);
+                });
+            });
+        </script>
+    
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

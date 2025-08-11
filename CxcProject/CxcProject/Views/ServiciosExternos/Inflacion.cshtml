@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Inflación";
+
+    // Obtener el periodo enviado (YYYYMM)
+    string periodo = ViewBag.Periodo ?? "202505";
+
+    // Diccionario meses para mostrar nombre
+    var meses = new Dictionary<string, string> {
+        {"01","Enero"}, {"02","Febrero"}, {"03","Marzo"}, {"04","Abril"},
+        {"05","Mayo"}, {"06","Junio"}, {"07","Julio"}, {"08","Agosto"},
+        {"09","Septiembre"}, {"10","Octubre"}, {"11","Noviembre"}, {"12","Diciembre"}
+    };
+
+    string anio = periodo.Substring(0, 4);
+    string mes = periodo.Substring(4, 2);
+    string mesNombre = meses.ContainsKey(mes) ? meses[mes] : "Desconocido";
+}
+
+<div class="container mt-4">
+    <h2 class="text-warning mb-4">📈 Inflación</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+            <h4 class="mb-3">Periodo: @mesNombre @anio</h4>
+            <p class="display-5 fw-bold text-danger">@ViewBag.Inflacion %</p>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+    </div>
+</div>

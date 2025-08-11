@@ -1,0 +1,29 @@
+﻿@model CxcProject.Models.Cliente
+@{
+    ViewData["Title"] = "Detalles Cliente";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-info">ℹ Detalles del Cliente</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Nombre</dt>
+                <dd class="col-sm-9">@Model.Nombre</dd>
+
+                <dt class="col-sm-3">Cédula</dt>
+                <dd class="col-sm-9">@Model.Cedula</dd>
+
+                <dt class="col-sm-3">Límite de Crédito</dt>
+                <dd class="col-sm-9">@Model.LimiteCredito</dd>
+
+                <dt class="col-sm-3">Estado</dt>
+                <dd class="col-sm-9">@(Model.Estado ? "Activo" : "Inactivo")</dd>
+            </dl>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <a asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning text-white">✏ Editar</a>
+        </div>
+    </div>
+</div>

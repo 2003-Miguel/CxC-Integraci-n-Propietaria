@@ -1,0 +1,147 @@
+﻿@{
+    ViewData["Title"] = "Servicios Web Externos";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">🌐 Servicios Web Externos</h1>
+    <p class="text-center text-muted mb-5">
+        Realiza consultas ingresando los parámetros que necesites.
+    </p>
+
+    <div class="row g-4">
+        <!-- Tasa de Cambio -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-info">
+                <div class="card-body">
+                    <h5 class="card-title">💱 Tasa de Cambio</h5>
+                    <form asp-action="TasaCambio" method="get">
+                        <div class="mb-3">
+                           <label class="form-label">Selecciona la Moneda</label>
+                           <select name="moneda" class="form-select" required>
+                               <option value="USD" selected>USD - Dólar estadounidense</option>
+                               <option value="MXN">MXN - Peso mexicano</option>
+                               <option value="EUR">EUR - Euro</option>
+                               <option value="CAD">CAD - Dólar canadiense</option>
+                               <option value="JPY">JPY - Yen japonés</option>
+                           </select>
+                         </div>
+                        <button type="submit" class="btn btn-info text-white w-100">Consultar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inflación -->
+<div class="col-md-6">
+    <div class="card shadow-sm border-secondary">
+        <div class="card-body">
+            <h5 class="card-title">📈 Índice de Inflación</h5>
+            <form asp-action="Inflacion" method="get" onsubmit="return prepararPeriodo()">
+                <div class="mb-3">
+                    <label class="form-label">Año</label>
+                    <select id="anio" name="anio" class="form-select" required>
+                                @for (int year = 2020; year <= 2030; year++)
+                                {
+                                    if (year == 2025)
+                                    {
+                                       <option value="@year" selected="selected">@year</option>
+                                    }
+                                    else
+                                    {
+                                       <option value="@year">@year</option>
+                                    }
+                                }
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mes</label>
+                    <select id="mes" name="mes" class="form-select" required>
+                        <option value="01">Enero</option>
+                        <option value="02">Febrero</option>
+                        <option value="03">Marzo</option>
+                        <option value="04">Abril</option>
+                        <option value="05" selected>Mayo</option>
+                        <option value="06">Junio</option>
+                        <option value="07">Julio</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+                </div>
+                <!-- Campo oculto para enviar periodo concatenado -->
+                <input type="hidden" id="periodo" name="periodo" />
+                <button type="submit" class="btn btn-secondary w-100">Consultar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+        <!-- Salud Financiera -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-dark">
+                <div class="card-body">
+                    <h5 class="card-title">🏦 Salud Financiera</h5>
+                    <form asp-action="SaludFinanciera" method="get">
+                        <div class="mb-3">
+                            <label class="form-label">Cédula / RNC</label>
+                            <input type="text" name="cedulaRnc" value="001-1234567-8" class="form-control" required />
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Consultar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historial Crediticio -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-primary">
+                <div class="card-body">
+                    <h5 class="card-title">📜 Historial Crediticio</h5>
+                    <form asp-action="HistorialCrediticio" method="get">
+                        <div class="mb-3">
+                            <label class="form-label">Cédula / RNC</label>
+                            <input type="text" name="cedulaRnc" value="001-1234567-8" class="form-control" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Consultar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 text-center">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">
+            ⬅ Volver al Panel Principal
+        </a>
+    </div>
+</div>
+
+  <script>
+    function prepararPeriodo() {
+        var anio = document.getElementById('anio').value;
+        var mes = document.getElementById('mes').value;
+
+        // Concatenar año y mes
+        var periodo = anio + mes;
+
+        // Asignar al campo oculto
+        document.getElementById('periodo').value = periodo;
+
+        // Dejar que el formulario se envíe
+        return true;
+    }
+
+    // Opcional: Al cargar la página, seleccionar las opciones correctas si vienen desde el servidor
+    window.onload = function() {
+        var periodo = '@ViewBag.Periodo' || '';
+        if (periodo.length === 6) {
+            var anio = periodo.substring(0, 4);
+            var mes = periodo.substring(4, 6);
+
+            document.getElementById('anio').value = anio;
+            document.getElementById('mes').value = mes;
+        }
+    };
+</script>

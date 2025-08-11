@@ -1,0 +1,26 @@
+﻿@model CxcProject.Models.TipoDocumento
+@{
+    ViewData["Title"] = "Detalles Tipo de Documento";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-info">ℹ Detalles del Tipo de Documento</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Descripción</dt>
+                <dd class="col-sm-9">@Model.Descripcion</dd>
+
+                <dt class="col-sm-3">Cuenta Contable</dt>
+                <dd class="col-sm-9">@Model.CuentaContable</dd>
+
+                <dt class="col-sm-3">Estado</dt>
+                <dd class="col-sm-9">@(Model.Estado ? "Activo" : "Inactivo")</dd>
+            </dl>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <a asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning text-white">✏ Editar</a>
+        </div>
+    </div>
+</div>

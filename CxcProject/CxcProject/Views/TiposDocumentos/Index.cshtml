@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CxcProject.Models.TipoDocumento>
+@{
+    ViewData["Title"] = "Tipos de Documentos";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">📋 Lista de Tipos de Documentos</h2>
+
+    <div class="mb-3">
+        <a asp-action="Create" class="btn btn-success">➕ Nuevo Tipo de Documento</a>
+    </div>
+
+    <table class="table table-bordered table-hover table-striped shadow-sm">
+        <thead class="table-primary">
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.Descripcion)</th>
+                <th>@Html.DisplayNameFor(m => m.CuentaContable)</th>
+                <th>@Html.DisplayNameFor(m => m.Estado)</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Descripcion</td>
+                    <td>@item.CuentaContable</td>
+                    <td>@(item.Estado ? "Activo" : "Inactivo")</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm me-4">✏ Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm text-white me-4">ℹ Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">🗑 Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,72 @@
+﻿@model CxcProject.Models.AsientoContable
+
+@{
+    ViewData["Title"] = "Nueva Asiento Contable";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">➕ Nuevo Asiento Contable</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Descripcion" class="form-label"></label>
+                    <input asp-for="Descripcion" class="form-control" placeholder="Descripción del asiento" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ClienteId" class="form-label"></label>
+                    <select asp-for="ClienteId" class="form-select" asp-items="ViewBag.ClienteId"></select>
+                    <span asp-validation-for="ClienteId" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Cuenta" class="form-label"></label>
+                    <input asp-for="Cuenta" class="form-control" placeholder="Cuenta contable" />
+                    <span asp-validation-for="Cuenta" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                   <label asp-for="TipoMovimiento" class="form-label"></label>
+                   <select asp-for="TipoMovimiento" class="form-select">
+                        <option value="">-- Seleccione Tipo de Movimiento --</option>
+                        <option value="Crédito">Crédito</option>
+                        <option value="Débito">Débito</option>
+                   </select>
+                   <span asp-validation-for="TipoMovimiento" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Fecha" class="form-label"></label>
+                    <input asp-for="Fecha" type="date" class="form-control" />
+                    <span asp-validation-for="Fecha" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Monto" class="form-label"></label>
+                    <input asp-for="Monto" class="form-control" placeholder="Monto" />
+                    <span asp-validation-for="Monto" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input asp-for="Estado" class="form-check-input" />
+                    <label asp-for="Estado" class="form-check-label"></label>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+                    <button type="submit" class="btn btn-primary">💾 Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

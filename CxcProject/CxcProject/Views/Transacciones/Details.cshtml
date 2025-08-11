@@ -1,0 +1,35 @@
+﻿@model CxcProject.Models.Transaccion
+@{
+    ViewData["Title"] = "Detalles Transacción";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-info">ℹ Detalles de la Transacción</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Tipo de Movimiento</dt>
+                <dd class="col-sm-9">@Model.TipoMovimiento</dd>
+
+                <dt class="col-sm-3">Número de Documento</dt>
+                <dd class="col-sm-9">@Model.NumeroDocumento</dd>
+
+                <dt class="col-sm-3">Fecha</dt>
+                <dd class="col-sm-9">@Model.Fecha.ToString("dd/MM/yyyy")</dd>
+
+                <dt class="col-sm-3">Monto</dt>
+                <dd class="col-sm-9">@Model.Monto.ToString("C")</dd>
+
+                <dt class="col-sm-3">Tipo de Documento</dt>
+                <dd class="col-sm-9">@Model.TipoDocumento?.Descripcion</dd>
+
+                <dt class="col-sm-3">Cliente</dt>
+                <dd class="col-sm-9">@Model.Cliente?.Nombre</dd>
+            </dl>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <a asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning text-white">✏ Editar</a>
+        </div>
+    </div>
+</div>

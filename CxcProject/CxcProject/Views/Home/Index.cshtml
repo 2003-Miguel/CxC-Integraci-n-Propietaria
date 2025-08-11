@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Panel Principal";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">📌 Sistema de Cuentas por Cobrar</h1>
+
+    <div class="row g-4">
+        <!-- CRUD Clientes -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-primary">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Clientes</h5>
+                    <p class="card-text">Gestión de clientes registrados en el sistema.</p>
+                    <a asp-controller="Clientes" asp-action="Index" class="btn btn-primary">Ir a Clientes</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CRUD Tipos de Documentos -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-success">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Tipos de Documentos</h5>
+                    <p class="card-text">Administrar tipos de documentos y cuentas contables.</p>
+                    <a asp-controller="TiposDocumentos" asp-action="Index" class="btn btn-success">Ir a Documentos</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CRUD Transacciones -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-warning">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Transacciones</h5>
+                    <p class="card-text">Registrar y consultar transacciones de clientes.</p>
+                    <a asp-controller="Transacciones" asp-action="Index" class="btn btn-warning text-white">Ir a Transacciones</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CRUD Asientos Contables -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-danger">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Asientos Contables</h5>
+                    <p class="card-text">Registro de asientos contables y exportación a contabilidad.</p>
+                    <a asp-controller="AsientosContables" asp-action="Index" class="btn btn-danger">Ir a Asientos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5" />
+
+     <h2 class="text-center mb-4">🌐 Servicios Web Externos</h2>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-info">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Panel de Servicios Externos</h5>
+                    <p class="card-text">Accede a las consultas de servicios externos: tasa de cambio, inflación, salud financiera, y más.</p>
+                    <a asp-controller="ServiciosExternos" asp-action="Index" class="btn btn-info text-white">Ir a Servicios Externos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@model CxcProject.Models.Transaccion
+@{
+    ViewData["Title"] = "Eliminar Transacción";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-danger">🗑 Eliminar Transacción</h2>
+    <div class="alert alert-danger">
+        <strong>¿Estás seguro?</strong> Esta acción no se puede deshacer.
+    </div>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Tipo de Movimiento</dt>
+                <dd class="col-sm-9">@Model.TipoMovimiento</dd>
+
+                <dt class="col-sm-3">Número de Documento</dt>
+                <dd class="col-sm-9">@Model.NumeroDocumento</dd>
+
+                <dt class="col-sm-3">Fecha</dt>
+                <dd class="col-sm-9">@Model.Fecha.ToString("dd/MM/yyyy")</dd>
+
+                <dt class="col-sm-3">Monto</dt>
+                <dd class="col-sm-9">@Model.Monto.ToString("C")</dd>
+
+                <dt class="col-sm-3">Tipo de Documento</dt>
+                <dd class="col-sm-9">@Model.TipoDocumento?.Descripcion</dd>
+
+                <dt class="col-sm-3">Cliente</dt>
+                <dd class="col-sm-9">@Model.Cliente?.Nombre</dd>
+            </dl>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <a asp-action="Index" class="btn btn-secondary">⬅ Cancelar</a>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger">Confirmar Eliminación</button>
+            </form>
+        </div>
+    </div>
+</div>

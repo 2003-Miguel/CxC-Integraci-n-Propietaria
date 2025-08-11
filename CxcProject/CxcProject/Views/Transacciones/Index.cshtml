@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CxcProject.Models.Transaccion>
+@{
+    ViewData["Title"] = "Transacciones";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">📋 Lista de Transacciones</h2>
+
+    <div class="mb-3">
+        <a asp-action="Create" class="btn btn-success">➕ Nueva Transacción</a>
+    </div>
+
+    <table class="table table-bordered table-hover table-striped shadow-sm">
+        <thead class="table-primary">
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.TipoMovimiento)</th>
+                <th>@Html.DisplayNameFor(m => m.NumeroDocumento)</th>
+                <th>@Html.DisplayNameFor(m => m.Fecha)</th>
+                <th>@Html.DisplayNameFor(m => m.Monto)</th>
+                <th>@Html.DisplayNameFor(m => m.TipoDocumento)</th>
+                <th>@Html.DisplayNameFor(m => m.Cliente)</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TipoMovimiento</td>
+                    <td>@item.NumeroDocumento</td>
+                    <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
+                    <td>@item.Monto.ToString("C")</td>
+                    <td>@item.TipoDocumento?.Descripcion</td>
+                    <td>@item.Cliente?.Nombre</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm me-4">✏ Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm text-white me-4">ℹ Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">🗑 Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

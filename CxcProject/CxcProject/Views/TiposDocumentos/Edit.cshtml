@@ -1,0 +1,88 @@
+﻿@model CxcProject.Models.TipoDocumento
+@{
+    ViewData["Title"] = "Editar Tipo de Documento";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-warning">✏ Editar Tipo de Documento</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form id="formTipoDocumento" asp-action="Edit">
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Descripcion" class="form-label"></label>
+                    <input asp-for="Descripcion" class="form-control" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="CuentaContable" class="form-label"></label>
+                    <input asp-for="CuentaContable" class="form-control" />
+                    <span asp-validation-for="CuentaContable" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" asp-for="Estado" />
+                    <label class="form-check-label">@Html.DisplayNameFor(m => m.Estado)</label>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+                    <button id="btnGuardar" type="submit" class="btn btn-warning text-white" disabled>💾 Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+          <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("formTipoDocumento");
+        const btnGuardar = document.getElementById("btnGuardar");
+
+            const originalValues = {};
+    form.querySelectorAll("input[name]:not([type='hidden']), select[name], textarea[name]").forEach(el => {
+      if (el.type === "checkbox" || el.type === "radio") {
+        originalValues[el.name] = el.checked;
+      } else {
+        originalValues[el.name] = el.value.trim();
+      }
+    });
+
+    function checkChanges() {
+      let changed = false;
+
+      form.querySelectorAll("input[name]:not([type='hidden']), select[name], textarea[name]").forEach(el => {
+        let original = originalValues[el.name];
+        let current;
+
+        if (el.type === "checkbox" || el.type === "radio") {
+          current = el.checked;
+        } else {
+          current = el.value.trim();
+        }
+
+        if (original !== current) {
+          changed = true;
+        }
+      });
+
+      btnGuardar.disabled = !changed;
+    }
+
+        form.querySelectorAll("input[name], select[name], textarea[name]").forEach(el => {
+          el.addEventListener("input", checkChanges);
+          el.addEventListener("change", checkChanges);
+        });
+
+        btnGuardar.disabled = true;
+      });
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

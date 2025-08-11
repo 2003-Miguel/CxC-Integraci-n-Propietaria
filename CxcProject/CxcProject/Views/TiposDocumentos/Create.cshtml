@@ -1,0 +1,43 @@
+﻿@model CxcProject.Models.TipoDocumento
+@{
+    ViewData["Title"] = "Nuevo Tipo de Documento";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">➕ Nuevo Tipo de Documento</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Descripcion" class="form-label"></label>
+                    <input asp-for="Descripcion" class="form-control" placeholder="Descripción del documento" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="CuentaContable" class="form-label"></label>
+                    <input asp-for="CuentaContable" class="form-control" placeholder="Cuenta contable asociada" />
+                    <span asp-validation-for="CuentaContable" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" asp-for="Estado" />
+                    <label class="form-check-label">@Html.DisplayNameFor(m => m.Estado)</label>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">⬅ Volver</a>
+                    <button type="submit" class="btn btn-primary">💾 Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
