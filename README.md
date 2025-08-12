@@ -25,7 +25,7 @@ Proyecto ASP.NET Core MVC para gestión de Cuentas Por Cobrar y consultas a serv
 
 ## Base de datos
 
-El respaldo de la base de datos está en la carpeta `/Database/` con el nombre `RespaldoCxcProject.bak`. Restaura este respaldo en tu instancia local de SQL Server para probar la aplicación.
+El respaldo de la base de datos está en la carpeta `/Database/` con el nombre `CxcDB.bak`. Restaura este respaldo en tu instancia local de SQL Server para probar la aplicación.
 
 ## Autores
 
