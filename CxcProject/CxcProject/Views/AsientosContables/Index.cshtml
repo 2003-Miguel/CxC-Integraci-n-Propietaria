@@ -7,6 +7,15 @@
 <div class="container mt-4">
     <h2 class="mb-4 text-primary">📋 Lista de Asientos Contables</h2>
 
+    @if (TempData["Success"] != null)
+    {
+            <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+            <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
     <div class="mb-3">
         <a asp-action="Create" class="btn btn-success">➕ Nuevo Asiento</a>
     </div>
@@ -27,20 +36,24 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@item.Descripcion</td>
-                    <td>@item.Cuenta</td>
-                    <td>@item.TipoMovimiento</td>
-                    <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
-                    <td>@item.Monto.ToString("C")</td>
-                    <td>@(item.Estado ? "Activo" : "Inactivo")</td>
-                    <td>@item.Cliente?.Nombre</td>
-                    <td class="text-center">
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm me-2">✏ Editar</a>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm text-white me-2">ℹ Detalles</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">🗑 Eliminar</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>@item.Descripcion</td>
+                        <td>@item.Cuenta</td>
+                        <td>@item.TipoMovimiento</td>
+                        <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
+                        <td>@item.Monto.ToString("C")</td>
+                        <td>@(item.Estado ? "Activo" : "Inactivo")</td>
+                        <td>@item.Cliente?.Nombre</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm me-2">✏ Editar</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm text-white me-2">ℹ Detalles</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm me-2">🗑 Eliminar</a>
+
+                            <form asp-action="Enviar" asp-route-id="@item.Id" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-primary btn-sm">📤 Enviar</button>
+                            </form>
+                        </td>
+                    </tr>
             }
         </tbody>
     </table>

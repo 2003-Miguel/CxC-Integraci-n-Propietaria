@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<CxcDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("CxcDB")));
-builder.Services.AddHttpClient<IServiciosExternosService, ServiciosExternosService>();
+builder.Services.AddHttpClient<IContabilidadService, ContabilidadService>();
 
 var app = builder.Build();
 

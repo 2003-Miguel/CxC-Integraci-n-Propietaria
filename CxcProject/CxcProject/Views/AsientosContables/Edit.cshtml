@@ -26,7 +26,7 @@
 
                 <div class="mb-3">
                     <label asp-for="Cuenta" class="form-label"></label>
-                    <input asp-for="Cuenta" class="form-control" />
+                    <select asp-for="Cuenta" class="form-select" asp-items="@( (IEnumerable<SelectListItem>)ViewData["Cuenta"] )"></select>
                     <span asp-validation-for="Cuenta" class="text-danger"></span>
                 </div>
 
@@ -34,8 +34,8 @@
                    <label asp-for="TipoMovimiento" class="form-label"></label>
                    <select asp-for="TipoMovimiento" class="form-select">
                         <option value="">-- Seleccione Tipo de Movimiento --</option>
-                        <option value="Crédito">Crédito</option>
-                        <option value="Débito">Débito</option>
+                        <option value="CR">Crédito</option>
+                        <option value="DB">Débito</option>
                    </select>
                    <span asp-validation-for="TipoMovimiento" class="text-danger"></span>
                 </div>

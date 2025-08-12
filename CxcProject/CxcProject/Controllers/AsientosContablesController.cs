@@ -7,23 +7,59 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CxcProject.Data;
 using CxcProject.Models;
+using CxcProject.Interfaces;
 
 namespace CxcProject.Controllers
 {
     public class AsientosContablesController : Controller
     {
         private readonly CxcDbContext _context;
+        private readonly IContabilidadService _contabilidadService;
 
-        public AsientosContablesController(CxcDbContext context)
+        public AsientosContablesController(CxcDbContext context, IContabilidadService contabilidadService)
         {
             _context = context;
+            _contabilidadService = contabilidadService;
+        }
+
+        private SelectList ObtenerCuentasSelectList(int? selectedValue = null)
+        {
+            var cuentas = new List<SelectListItem>
+    {
+        new SelectListItem("2 - ACTIVOS FIJOS", "2"),
+        new SelectListItem("3 - CAJA CHICA", "3"),
+        new SelectListItem("4 - CUENTA CORRIENTE BANCO X", "4"),
+        new SelectListItem("6 - INVENTARIO", "6"),
+        new SelectListItem("8 - CUENTAS X COBRAR CLIENTE X", "8"),
+        new SelectListItem("13 - INGRESOS Y VENTAS", "13")
+        };
+
+            return new SelectList(cuentas, "Value", "Text", selectedValue);
         }
 
         // GET: AsientosContables
         public async Task<IActionResult> Index()
         {
-            var cxcDbContext = _context.AsientosContables.Include(a => a.Cliente);
-            return View(await cxcDbContext.ToListAsync());
+            var asientos = await _context.AsientosContables.Include(a => a.Cliente).ToListAsync();
+            return View(asientos);
+        }
+
+        // POST: AsientosContables/Enviar/5
+        [HttpPost]
+        public async Task<IActionResult> Enviar(int id)
+        {
+            var asiento = await _context.AsientosContables.FindAsync(id);
+            if (asiento == null)
+                return NotFound();
+
+            bool enviado = await _contabilidadService.EnviarAsientoContableAsync(asiento);
+
+            if (enviado)
+                TempData["Success"] = $"Asiento {id} enviado exitosamente.";
+            else
+                TempData["Error"] = $"Error al enviar el asiento {id}.";
+
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: AsientosContables/Details/5
@@ -48,6 +84,7 @@ namespace CxcProject.Controllers
         // GET: AsientosContables/Create
         public IActionResult Create()
         {
+            ViewData["Cuenta"] = ObtenerCuentasSelectList();
             ViewData["ClienteId"] = new SelectList(_context.Clientes.Where(c => c.Estado), "Id", "Nombre");
             return View();
         }
@@ -78,6 +115,7 @@ namespace CxcProject.Controllers
             {
                 return NotFound();
             }
+            ViewData["Cuenta"] = ObtenerCuentasSelectList();
             ViewData["ClienteId"] = new SelectList(_context.Clientes.Where(c => c.Estado), "Id", "Nombre", asientoContable.ClienteId);
             return View(asientoContable);
         }
