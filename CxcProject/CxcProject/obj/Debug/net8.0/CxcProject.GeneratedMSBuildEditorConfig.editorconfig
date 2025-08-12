@@ -17,123 +17,123 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CxcProject
 build_property.RootNamespace = CxcProject
-build_property.ProjectDir = C:\Users\Usuario\OneDrive\Escritorio\Repositorios de Git\CxC-Integracion-Propietaria\CxcProject\CxcProject\
+build_property.ProjectDir = C:\Users\Usuario\OneDrive\Escritorio\Repositorios de Git\CxC-Integracion-Propietaria-1\CxcProject\CxcProject\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Usuario\OneDrive\Escritorio\Repositorios de Git\CxC-Integracion-Propietaria\CxcProject\CxcProject
+build_property.MSBuildProjectDirectory = C:\Users\Usuario\OneDrive\Escritorio\Repositorios de Git\CxC-Integracion-Propietaria-1\CxcProject\CxcProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/AsientosContables/Create.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/AsientosContables/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpZW50b3NDb250YWJsZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/AsientosContables/Delete.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/AsientosContables/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpZW50b3NDb250YWJsZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/AsientosContables/Details.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/AsientosContables/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpZW50b3NDb250YWJsZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/AsientosContables/Edit.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/AsientosContables/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpZW50b3NDb250YWJsZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/AsientosContables/Entradas.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/AsientosContables/Entradas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpZW50b3NDb250YWJsZXNcRW50cmFkYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/AsientosContables/Index.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/AsientosContables/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpZW50b3NDb250YWJsZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Clientes/Create.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Clientes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Clientes/Delete.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Clientes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Clientes/Details.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Clientes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Clientes/Edit.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Clientes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Clientes/Index.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Clientes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Home/Index.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Home/Privacy.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Shared/Error.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/TiposDocumentos/Create.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/TiposDocumentos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NEb2N1bWVudG9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/TiposDocumentos/Delete.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/TiposDocumentos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NEb2N1bWVudG9zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/TiposDocumentos/Details.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/TiposDocumentos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NEb2N1bWVudG9zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/TiposDocumentos/Edit.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/TiposDocumentos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NEb2N1bWVudG9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/TiposDocumentos/Index.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/TiposDocumentos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NEb2N1bWVudG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Transacciones/Create.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Transacciones/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY2Npb25lc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Transacciones/Delete.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Transacciones/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY2Npb25lc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Transacciones/Details.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Transacciones/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY2Npb25lc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Transacciones/Edit.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Transacciones/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY2Npb25lc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Transacciones/Index.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Transacciones/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY2Npb25lc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/_ViewImports.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/_ViewStart.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria/CxcProject/CxcProject/Views/Shared/_Layout.cshtml]
+[C:/Users/Usuario/OneDrive/Escritorio/Repositorios de Git/CxC-Integracion-Propietaria-1/CxcProject/CxcProject/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2qumcjn1kd

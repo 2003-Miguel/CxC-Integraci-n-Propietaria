@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Repositorios de Git\\CxC-Integracion-Propietaria\\CxcProject\\CxcProject\\CxcProject.csproj": {}
+    "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Repositorios de Git\\CxC-Integracion-Propietaria-1\\CxcProject\\CxcProject\\CxcProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Repositorios de Git\\CxC-Integracion-Propietaria\\CxcProject\\CxcProject\\CxcProject.csproj": {
+    "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Repositorios de Git\\CxC-Integracion-Propietaria-1\\CxcProject\\CxcProject\\CxcProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Repositorios de Git\\CxC-Integracion-Propietaria\\CxcProject\\CxcProject\\CxcProject.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Repositorios de Git\\CxC-Integracion-Propietaria-1\\CxcProject\\CxcProject\\CxcProject.csproj",
         "projectName": "CxcProject",
-        "projectPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Repositorios de Git\\CxC-Integracion-Propietaria\\CxcProject\\CxcProject\\CxcProject.csproj",
+        "projectPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Repositorios de Git\\CxC-Integracion-Propietaria-1\\CxcProject\\CxcProject\\CxcProject.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Repositorios de Git\\CxC-Integracion-Propietaria\\CxcProject\\CxcProject\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Repositorios de Git\\CxC-Integracion-Propietaria-1\\CxcProject\\CxcProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

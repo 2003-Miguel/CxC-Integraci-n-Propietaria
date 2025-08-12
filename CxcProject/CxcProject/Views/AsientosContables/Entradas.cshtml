@@ -6,7 +6,6 @@
     var obj = JObject.Parse(json);
     var data = obj["data"] as JArray;
 
-    // Filtros
     string filtroDescripcion = Context.Request.Query["descripcion"];
     string filtroAuxiliar = Context.Request.Query["auxiliar"];
     string filtroTipoMovimiento = Context.Request.Query["tipoMovimiento"];
