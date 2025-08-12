@@ -20,7 +20,7 @@ Proyecto ASP.NET Core MVC para gestión de Cuentas Por Cobrar y consultas a serv
 1. Clona este repositorio.
 2. Restaura los paquetes NuGet: `dotnet restore`.
 3. Configura la cadena de conexión en `appsettings.json`.
-4. Restaura y ejecuta la base de datos con el respaldo ubicado en `/Database/RespaldoCxcProject.bak`.
+4. Restaura y ejecuta la base de datos con el respaldo ubicado en `/Database/CxcDB.bak`.
 5. Ejecuta la aplicación.
 
 ## Base de datos
