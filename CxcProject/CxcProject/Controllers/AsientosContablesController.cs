@@ -37,6 +37,20 @@ namespace CxcProject.Controllers
             return new SelectList(cuentas, "Value", "Text", selectedValue);
         }
 
+        public async Task<IActionResult> Entradas()
+        {
+            var json = await _contabilidadService.ObtenerEntradasContablesAsync();
+            if (string.IsNullOrEmpty(json))
+            {
+                TempData["Error"] = "No se pudieron obtener las entradas contables.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewBag.JsonEntradas = json;
+
+            return View();
+        }
+
         // GET: AsientosContables
         public async Task<IActionResult> Index()
         {

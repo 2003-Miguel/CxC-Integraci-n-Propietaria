@@ -1,0 +1,135 @@
+﻿@using Newtonsoft.Json.Linq
+@{
+    ViewData["Title"] = "Entradas Contables";
+
+    var json = ViewBag.JsonEntradas as string;
+    var obj = JObject.Parse(json);
+    var data = obj["data"] as JArray;
+
+    // Filtros
+    string filtroDescripcion = Context.Request.Query["descripcion"];
+    string filtroAuxiliar = Context.Request.Query["auxiliar"];
+    string filtroTipoMovimiento = Context.Request.Query["tipoMovimiento"];
+    string filtroFechaDesde = Context.Request.Query["fechaDesde"];
+    string filtroFechaHasta = Context.Request.Query["fechaHasta"];
+
+    IEnumerable<JToken> filtrados = data;
+
+    if (!string.IsNullOrEmpty(filtroDescripcion))
+        filtrados = filtrados.Where(x => x["descripcion"]?.ToString().Contains(filtroDescripcion, StringComparison.OrdinalIgnoreCase) == true);
+
+    if (!string.IsNullOrEmpty(filtroAuxiliar))
+        filtrados = filtrados.Where(x => x["Auxiliare"]?["nombre"]?.ToString().Contains(filtroAuxiliar, StringComparison.OrdinalIgnoreCase) == true);
+
+    if (!string.IsNullOrEmpty(filtroTipoMovimiento))
+        filtrados = filtrados.Where(x => string.Equals(x["tipoMovimiento"]?.ToString(), filtroTipoMovimiento, StringComparison.OrdinalIgnoreCase));
+
+    if (DateTime.TryParse(filtroFechaDesde, out var fechaDesde))
+        filtrados = filtrados.Where(x => DateTime.TryParse(x["fechaAsiento"]?.ToString(), out var f) && f >= fechaDesde);
+
+    if (DateTime.TryParse(filtroFechaHasta, out var fechaHasta))
+        filtrados = filtrados.Where(x => DateTime.TryParse(x["fechaAsiento"]?.ToString(), out var f) && f <= fechaHasta);
+
+    var grupos = filtrados.GroupBy(x => x["descripcion"]?.ToString() ?? "Sin descripción");
+}
+
+@functions {
+    string ToSafeId(string key)
+    {
+        if (string.IsNullOrEmpty(key)) return "sin_descripcion";
+        var safe = System.Text.RegularExpressions.Regex.Replace(key.ToLower(), @"[^a-z0-9]+", "_");
+        return safe;
+    }
+}
+
+<h2>📄 Entradas Contables</h2>
+
+<form method="get" class="row g-3 mb-4">
+    <div class="col-md-3">
+        <label class="form-label">Descripción</label>
+        <input type="text" name="descripcion" value="@filtroDescripcion" class="form-control" placeholder="Buscar descripción" />
+    </div>
+    <div class="col-md-2">
+        <label class="form-label">Fecha Desde</label>
+        <input type="date" name="fechaDesde" value="@filtroFechaDesde" class="form-control" />
+    </div>
+    <div class="col-md-2">
+        <label class="form-label">Fecha Hasta</label>
+        <input type="date" name="fechaHasta" value="@filtroFechaHasta" class="form-control" />
+    </div>
+    <div class="col-12 text-end">
+        <button type="submit" class="btn btn-primary">🔍 Filtrar</button>
+        <a href="@Url.Action("Entradas")" class="btn btn-secondary ms-2">Limpiar</a>
+    </div>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary mb-3">⬅ Volver al Inicio</a>
+
+<div class="accordion" id="entradasAccordion">
+    @foreach (var grupo in grupos)
+    {
+        var groupId = ToSafeId(grupo.Key);
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading_@groupId">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_@groupId" aria-expanded="false" aria-controls="collapse_@groupId">
+                    @grupo.Key (@grupo.Count() entradas)
+                    </button>
+                </h2>
+                <div id="collapse_@groupId" class="accordion-collapse collapse" aria-labelledby="heading_@groupId" data-bs-parent="#entradasAccordion">
+                    <div class="accordion-body p-0">
+                        <table class="table table-bordered table-hover mb-0">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cuenta</th>
+                                    <th>Auxiliar</th>
+                                    <th>Tipo Movimiento</th>
+                                    <th>Fecha</th>
+                                    <th>Monto</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var item in grupo)
+                            {
+                                    <tr>
+                                        <td>@item["id"]</td>
+                                        <td>
+                                        @{
+                                            var catalogo = item["CatalogoCuentasContable"];
+                                            if (catalogo != null && catalogo.Type == JTokenType.Object)
+                                            {
+                                                @catalogo["descripcion"]
+                                            }
+                                            else
+                                            {
+                                                @:N/A
+                                            }
+                                        }
+                                        </td>
+                                        <td>
+                                        @{
+                                            var aux = item["Auxiliare"];
+                                            if (aux != null && aux.Type == JTokenType.Object)
+                                            {
+                                                @aux["nombre"]
+                                            }
+                                            else
+                                            {
+                                                @:N/A
+                                            }
+                                        }
+                                        </td>
+                                        <td>@item["tipoMovimiento"]</td>
+                                        <td>@item["fechaAsiento"]</td>
+                                        <td>@item["montoAsiento"]</td>
+                                        <td>@((int)item["estado_Id"] == 1 ? "Activo" : "Inactivo")</td>
+                                    </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    }
+</div>

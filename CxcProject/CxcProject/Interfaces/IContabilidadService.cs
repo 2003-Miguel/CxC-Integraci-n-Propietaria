@@ -7,5 +7,6 @@ namespace CxcProject.Interfaces
     public interface IContabilidadService
     {
         Task<bool> EnviarAsientoContableAsync(AsientoContable asiento);
+        Task<string> ObtenerEntradasContablesAsync();
     }
 }

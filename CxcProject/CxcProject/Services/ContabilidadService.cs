@@ -50,5 +50,24 @@ namespace CxcProject.Services
                 return false;
             }
         }
+
+        public async Task<string> ObtenerEntradasContablesAsync()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://3.80.223.142:3001/api/public/entradas-contables");
+            request.Headers.Add("x-api-key", "ak_live_e030145cab28d2cf2623fdc8bc9f2fb6ba0038253704b703");
+
+            var response = await _httpClient.SendAsync(request);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            if (response.IsSuccessStatusCode)
+            {
+                return responseString;
+            }
+            else
+            {
+                Console.WriteLine($"Error al obtener entradas: {response.StatusCode} - {responseString}");
+                return null;
+            }
+        }
     }
 }

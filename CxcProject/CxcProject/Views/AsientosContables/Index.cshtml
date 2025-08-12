@@ -18,6 +18,7 @@
 
     <div class="mb-3">
         <a asp-action="Create" class="btn btn-success">➕ Nuevo Asiento</a>
+        <a asp-action="Entradas" class="btn btn-secondary">📄 Ver Entradas Contables</a>
     </div>
 
     <table class="table table-bordered table-hover table-striped shadow-sm">
@@ -44,15 +45,16 @@
                         <td>@item.Monto.ToString("C")</td>
                         <td>@(item.Estado ? "Activo" : "Inactivo")</td>
                         <td>@item.Cliente?.Nombre</td>
-                        <td class="text-center">
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm me-2">✏ Editar</a>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm text-white me-2">ℹ Detalles</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm me-2">🗑 Eliminar</a>
-
-                            <form asp-action="Enviar" asp-route-id="@item.Id" method="post" class="d-inline">
-                                <button type="submit" class="btn btn-primary btn-sm">📤 Enviar</button>
-                            </form>
-                        </td>
+                            <td class="text-center">
+                               <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.25rem;">
+                                   <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">✏ Editar</a>
+                                   <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm text-white">ℹ Detalles</a>
+                                   <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">🗑 Eliminar</a>
+                                   <form asp-action="Enviar" asp-route-id="@item.Id" method="post" class="m-0 p-0">
+                                       <button type="submit" class="btn btn-primary btn-sm">📤 Enviar</button>
+                                   </form>
+                               </div>
+                          </td>
                     </tr>
             }
         </tbody>

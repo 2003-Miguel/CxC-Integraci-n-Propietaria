@@ -2,6 +2,20 @@
 
 @{
     ViewData["Title"] = "Detalles Asiento Contable";
+
+    var cuentas = new Dictionary<string, string>
+    {
+        { "2", "ACTIVOS FIJOS" },
+        { "3", "CAJA CHICA" },
+        { "4", "CUENTA CORRIENTE BANCO X" },
+        { "6", "INVENTARIO" },
+        { "8", "CUENTAS X COBRAR CLIENTE X" },
+        { "13", "INGRESOS Y VENTAS" }
+    };
+
+    var descripcionCuenta = cuentas.ContainsKey(Model.Cuenta)
+        ? $"{Model.Cuenta} - {cuentas[Model.Cuenta]}"
+        : Model.Cuenta;
 }
 
 <div class="container mt-4">
@@ -13,7 +27,7 @@
                 <dd class="col-sm-9">@Model.Descripcion</dd>
 
                 <dt class="col-sm-3">Cuenta</dt>
-                <dd class="col-sm-9">@Model.Cuenta</dd>
+                <dd class="col-sm-9">@descripcionCuenta</dd>
 
                 <dt class="col-sm-3">Tipo de Movimiento</dt>
                 <dd class="col-sm-9">@Model.TipoMovimiento</dd>
